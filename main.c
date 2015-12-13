@@ -3,6 +3,7 @@
 #include <string.h>
 #include <time.h>
 #include <assert.h>
+#include <unistd.h>
 
 #include IMPL
 
@@ -28,6 +29,9 @@ int main(int argc, char *argv[])
     char line[MAX_LAST_NAME_SIZE];
     struct timespec start, end;
     double cpu_time1, cpu_time2;
+
+    printf("pid: %d\n", getpid());
+//    sleep(10);
 
     /* check file opening */
     fp = fopen(DICT_FILE, "r");
